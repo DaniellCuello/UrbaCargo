@@ -1,12 +1,10 @@
-// Fallback for using MaterialIcons on Android and web.
-
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import { SymbolWeight, SymbolViewProps } from 'expo-symbols';
+import { SymbolViewProps, SymbolWeight } from 'expo-symbols';
 import { ComponentProps } from 'react';
 import { OpaqueColorValue, type StyleProp, type TextStyle } from 'react-native';
 
 type IconMapping = Record<SymbolViewProps['name'], ComponentProps<typeof MaterialIcons>['name']>;
-type IconSymbolName = keyof typeof MAPPING;
+export type IconSymbolName = keyof typeof MAPPING;
 
 /**
  * Add your SF Symbols to Material Icons mappings here.
@@ -15,16 +13,60 @@ type IconSymbolName = keyof typeof MAPPING;
  */
 const MAPPING = {
   'house.fill': 'home',
-  'paperplane.fill': 'send',
-  'chevron.left.forwardslash.chevron.right': 'code',
+  'shippingbox.fill': 'inventory-2',
+  'map.fill': 'map',
+  'person.fill': 'person',
+  'plus.circle.fill': 'add-circle',
+  'magnifyingglass': 'search',
   'chevron.right': 'chevron-right',
+  'chevron.left': 'chevron-left',
+  'clock.fill': 'schedule',
+  'bell.fill': 'notifications',
+  'location.fill': 'location-on',
+  'checkmark.circle.fill': 'check-circle',
+  'truck.box.fill': 'local-shipping',
+  'arrow.right': 'arrow-forward',
+  'arrow.left': 'arrow-back',
+  'arrow.up.right': 'north-east',
+  'phone.fill': 'phone',
+  'qrcode': 'qr-code',
+  'gearshape.fill': 'settings',
+  'creditcard.fill': 'credit-card',
+  'questionmark.circle.fill': 'help-outline',
+  'xmark': 'close',
+  'person.crop.circle': 'account-circle',
+  'person.circle.fill': 'account-circle',
+  'star.fill': 'star',
+  'doc.text.fill': 'description',
+  'mappin.and.ellipse': 'place',
+  'square.grid.2x2.fill': 'grid-view',
+  'building.2.fill': 'business',
+  'shield.lefthalf.filled': 'verified-user',
+  'calendar': 'event',
+  'chevron.left.forwardslash.chevron.right': 'code',
+  'bicycle': 'directions-bike',
+  'bolt.fill': 'bolt',
+  'leaf.fill': 'eco',
+  'tray.fill': 'inbox',
+  'desktopcomputer': 'desktop-windows',
+  'wrench.and.screwdriver.fill': 'build',
+  'paintbrush.fill': 'palette',
+  'iphone': 'smartphone',
+  'book.fill': 'book',
+  'figure.walk': 'directions-walk',
+  'square.and.arrow.up': 'share',
+  'eye.fill': 'visibility',
+  'eye.slash.fill': 'visibility-off',
+  'lock.fill': 'lock',
+  'checkmark': 'check',
+  'xmark.circle.fill': 'cancel',
+  'briefcase.fill': 'work',
+  'apple.logo': 'phone-iphone',
+  'checkmark.seal.fill': 'verified',
+  'shield.fill': 'shield',
+  'rectangle.portrait.and.arrow.right': 'logout',
 } as IconMapping;
 
-/**
- * An icon component that uses native SF Symbols on iOS, and Material Icons on Android and web.
- * This ensures a consistent look across platforms, and optimal resource usage.
- * Icon `name`s are based on SF Symbols and require manual mapping to Material Icons.
- */
 export function IconSymbol({
   name,
   size = 24,

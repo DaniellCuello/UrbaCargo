@@ -1,50 +1,114 @@
-# Welcome to your Expo app 👋
+# 🚀 UrbaCargo - Plataforma Móvil de Servicios y Logística Express
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+![UrbaCargo Banner](https://images.unsplash.com/photo-1588702547919-26089e690ecc?w=1200)
 
-## Get started
+**UrbaCargo** es una plataforma móvil multiplataforma (Android, iOS y Web) construida con **Expo SDK 54** y **expo-router**. Permite conectar a clientes con prestadores de servicios en **Riohacha, Colombia**, ofreciendo búsqueda inteligente, cotización por presupuestos, solicitud interactiva y rastreo con mapa en tiempo real con simulación de movimiento.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 📸 Capturas de Pantalla de la Aplicación
 
-2. Start the app
+### 1. 🔐 Pantalla de Inicio & Autenticación (Login)
+Pantalla de entrada por defecto con temática en **color naranja**, selectores de tipo de cuenta (`Particular / Cliente` vs `Empresa / Prestador`), número de teléfono con selector `+57`, contraseña con ojo de visibilidad y validación estricta de términos de servicio.
 
-   ```bash
-   npx expo start
-   ```
+![Autenticación y Login](file:///C:/Users/gomez/.gemini/antigravity/brain/e235a887-f18f-4622-b8c6-06541a6c5b8f/login_screen_mockup_1789604237492.jpg)
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 2. 🏠 Explorar & Catálogo de Servicios (Vista Cliente)
+Panel principal para el usuario **Daniel Cuello** con barra de búsqueda instantánea en vivo, carrusel de categorías con miniaturas, filtro por rangos de precio (Económicos ≤ $60k, Estándar $60k-$120k, Premium > $120k) y 15 servicios disponibles en Riohacha.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+![Explorar y Servicios](file:///C:/Users/gomez/.gemini/antigravity/brain/e235a887-f18f-4622-b8c6-06541a6c5b8f/home_screen_mockup_1789604253661.jpg)
 
-## Get a fresh project
+---
 
-When you're ready, run:
+### 3. 📄 Detalle del Servicio & Solicitud
+Vista detallada con descripción completa del servicio, rating de 4.9 estrellas, datos de contacto del prestador **Carlos Mendoza**, tiempo estimado de atención, mapa preview de ubicación en Riohacha y botón **"Solicitar Servicio"**.
+
+![Detalle del Servicio](file:///C:/Users/gomez/.gemini/antigravity/brain/e235a887-f18f-4622-b8c6-06541a6c5b8f/service_detail_mockup_1789604271437.jpg)
+
+---
+
+### 4. 🗺️ Mapa de Rastreo en Tiempo Real (Riohacha)
+Línea de tiempo del ciclo de vida (`PENDING` ➔ `ACCEPTED` ➔ `ON_THE_WAY` ➔ `IN_PROGRESS` ➔ `COMPLETED`). Incluye el mapa dinámico de Riohacha con marcadores interactivos del cliente y prestador, polyline de ruta, efecto de pulso animado en movimiento y tacómetro con distancia en kilómetros y ETA.
+
+![Mapa de Rastreo](file:///C:/Users/gomez/.gemini/antigravity/brain/e235a887-f18f-4622-b8c6-06541a6c5b8f/tracking_map_mockup_1789604289700.jpg)
+
+---
+
+### 5. 👤 Perfil del Usuario
+Vista oficial del perfil de **Daniel Cuello** con teléfono **3122064526**, fotografía HD de hombre trigueño, rol de cuenta, ubicación base en Riohacha y accesos funcionales a Notificaciones y Seguridad.
+
+![Perfil del Usuario](file:///C:/Users/gomez/.gemini/antigravity/brain/e235a887-f18f-4622-b8c6-06541a6c5b8f/profile_screen_mockup_1789604310931.jpg)
+
+---
+
+## 🛠️ Stack Tecnológico
+
+| Tecnología | Versión / Descripción |
+| --- | --- |
+| **Expo** | `~54.0.36` |
+| **React Native** | `0.81.5` |
+| **React** | `19.1.0` |
+| **Expo Router** | `~6.0.24` (File-based Routing) |
+| **TypeScript** | `~5.9.2` |
+| **Estilos & Iconos** | `@expo/vector-icons`, Theme Tokens Naranja |
+
+---
+
+## 🚀 Puesta en Marcha
+
+### Requisitos
+- **Node.js 20.19+**
+- App **Expo Go** (SDK 54) o navegador web.
+
+### Instalación e Inicio
 
 ```bash
-npm run reset-project
+# 1. Instalar dependencias
+npm install
+
+# 2. Iniciar servidor de desarrollo Metro
+npm start
+
+# 3. Abrir en la web
+npm run web
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 📁 Estructura del Proyecto
 
-To learn more about developing your project with Expo, look at the following resources:
+```
+UrbaCargo/
+├── app/                        Rutas principales (expo-router)
+│   ├── index.tsx               Guardia de inicio de app (Redirect a Login)
+│   ├── login.tsx               Pantalla de Autenticación Naranja
+│   ├── _layout.tsx             Root layout con AppProvider y ThemeProvider
+│   ├── service/[id].tsx        Vista 2: Detalle y contratación de servicio
+│   └── (tabs)/                 Navegación por pestañas
+│       ├── _layout.tsx         Guardia de sesión y barra de pestañas
+│       ├── index.tsx           Vista 1: Explorar servicios / Dashboard prestador
+│       ├── shipments.tsx       Listado e historial de solicitudes
+│       ├── track.tsx           Vista 3: Mapa de seguimiento en Riohacha
+│       └── profile.tsx         Perfil oficial de Daniel Cuello
+├── components/                 Componentes reutilizables
+│   ├── interactive-map.tsx     Mapa SVG de Riohacha con animación en vivo
+│   ├── notifications-modal.tsx Centro de notificaciones flotante
+│   ├── screen.tsx              Contenedor de pantallas con Safe Area
+│   └── ui/                     Badges, Botones, Tarjetas e Iconos
+├── context/                    State Store reactivo en tiempo real
+│   └── AppContext.tsx          Manejo de usuario, servicios, notificaciones y animación
+├── data/                       Datos mock iniciales
+│   └── mock-data.ts            15 servicios, categorías y usuarios de prueba
+├── types/                      Definiciones del dominio TypeScript
+│   └── services.ts             Modelos de Usuario, Servicio y Solicitud
+└── constants/                  Tokens de diseño y paleta Naranja (#EA580C)
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 👥 Credenciales de Prueba
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **Cliente**: `cliente@test.com` / `3122064526` (Titular: **Daniel Cuello**)
+- **Prestador (Empleado)**: `prestador@test.com` / `3159876543` (Titular: **Carlos Mendoza**)

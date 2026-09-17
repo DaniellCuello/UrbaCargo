@@ -1,0 +1,294 @@
+# Plataforma móvil de prestación y solicitud de servicios
+
+## Objetivo
+
+Desarrollar una aplicación móvil unificada que permita conectar clientes con personas que ofrecen servicios.
+
+La aplicación tendrá un único sistema de autenticación, pero manejará dos roles:
+
+* CLIENT: usuario que busca y solicita servicios.
+* PROVIDER: usuario que ofrece servicios y atiende solicitudes.
+
+La aplicación debe funcionar inicialmente con datos de prueba, pero debe estar estructurada para posteriormente conectarse a un backend/API real.
+
+## Tecnologías
+
+Utilizar:
+
+* React Native
+* Expo
+* TypeScript
+* React Navigation
+* Axios si se requiere una capa de API
+* Sistema de mapas compatible con Expo/React Native
+* Datos mock/locales para la primera versión
+
+Evitar dependencias innecesarias.
+
+## Autenticación
+
+Crear una pantalla de Login compartida para ambos tipos de usuario.
+
+Datos de prueba:
+
+CLIENT:
+
+* Email: cliente@test.com
+* Password: 123456
+
+PROVIDER:
+
+* Email: prestador@test.com
+* Password: 123456
+
+Después del login, identificar el rol del usuario y mostrar la interfaz correspondiente.
+
+## Roles
+
+### CLIENT
+
+Puede:
+
+1. Ver servicios disponibles.
+2. Buscar servicios.
+3. Filtrar por categoría.
+4. Filtrar por precio.
+5. Ver calificación.
+6. Ver distancia aproximada.
+7. Ver información del prestador.
+8. Ver detalles del servicio.
+9. Solicitar un servicio.
+10. Ver el estado de una solicitud.
+11. Ver en el mapa la ubicación del prestador cuando esté en camino.
+
+### PROVIDER
+
+Puede:
+
+1. Ver sus servicios.
+2. Ver solicitudes pendientes.
+3. Aceptar solicitudes.
+4. Rechazar solicitudes.
+5. Cambiar el estado de una solicitud.
+6. Ver la ubicación donde debe prestar el servicio.
+7. Ver la ruta hacia el cliente.
+8. Marcar el servicio como iniciado.
+9. Marcar el servicio como completado.
+
+## Vistas principales
+
+La aplicación debe tener tres vistas principales.
+
+### Vista 1: Home / Explorar
+
+Para CLIENT:
+
+* Barra de búsqueda.
+* Categorías.
+* Filtros.
+* Lista de servicios.
+* Tarjetas con:
+  * Nombre del servicio.
+  * Nombre del prestador.
+  * Precio.
+  * Calificación.
+  * Distancia.
+  * Imagen/avatar.
+
+Para PROVIDER:
+
+* Resumen de servicios publicados.
+* Solicitudes pendientes.
+* Servicios activos.
+
+### Vista 2: Detalle del servicio
+
+Mostrar:
+
+* Nombre del servicio.
+* Nombre del prestador.
+* Calificación.
+* Descripción.
+* Precio.
+* Categoría.
+* Ubicación.
+* Mapa.
+* Botón "Solicitar servicio".
+
+Al solicitar, crear una solicitud con estado PENDING.
+
+### Vista 3: Seguimiento del servicio
+
+Mostrar:
+
+* Información del servicio.
+* Información del cliente/prestador.
+* Estado actual.
+* Línea de progreso.
+* Mapa.
+* Ubicación del cliente.
+* Ubicación del prestador.
+* Distancia aproximada.
+
+Estados:
+
+PENDING
+ACCEPTED
+ON_THE_WAY
+IN_PROGRESS
+COMPLETED
+CANCELLED
+
+## Flujo del cliente
+
+1. Login.
+2. Home.
+3. Buscar servicio.
+4. Aplicar filtros.
+5. Seleccionar servicio.
+6. Ver detalles.
+7. Solicitar.
+8. Estado PENDING.
+9. Prestador acepta.
+10. Estado ACCEPTED.
+11. Prestador inicia desplazamiento.
+12. Estado ON_THE_WAY.
+13. Mostrar ubicación del prestador en el mapa.
+14. Prestador inicia el servicio.
+15. Estado IN_PROGRESS.
+16. Prestador finaliza.
+17. Estado COMPLETED.
+
+## Flujo del prestador
+
+1. Login.
+2. Home de prestador.
+3. Ver solicitudes.
+4. Seleccionar solicitud.
+5. Ver información del cliente.
+6. Ver ubicación donde debe prestar el servicio.
+7. Aceptar solicitud.
+8. Estado ACCEPTED.
+9. Marcar "En camino".
+10. Estado ON_THE_WAY.
+11. Mostrar ruta/ubicación.
+12. Marcar "Iniciar servicio".
+13. Estado IN_PROGRESS.
+14. Marcar "Finalizar servicio".
+15. Estado COMPLETED.
+
+## Mapa
+
+Implementar un mapa funcional.
+
+Para los datos de prueba utilizar ubicaciones ficticias de Riohacha, Colombia.
+
+Cada usuario debe tener:
+
+* latitude
+* longitude
+
+Durante el estado ON_THE_WAY se debe mostrar:
+
+* posición del cliente.
+* posición del prestador.
+* marcador de cada uno.
+* línea o ruta visual entre ambos.
+* distancia aproximada.
+
+Para la demostración académica se permite simular el movimiento del prestador mediante coordenadas mock.
+
+## Datos mock
+
+Crear datos iniciales para:
+
+* usuarios
+* prestadores
+* servicios
+* categorías
+* solicitudes
+
+Ejemplos de servicios:
+
+* Reparación de computadores
+* Limpieza de casas
+* Electricista
+* Plomería
+* Diseño gráfico
+* Reparación de celulares
+* Clases particulares
+
+Crear mínimo 5 prestadores y 10 servicios de prueba.
+
+## Diseño
+
+La interfaz debe verse moderna, limpia y profesional.
+
+Usar:
+
+* tarjetas.
+* botones claros.
+* iconos.
+* estados mediante badges.
+* navegación intuitiva.
+* diseño responsive para móvil.
+
+No sobrecargar las pantallas.
+
+## Arquitectura
+
+Separar el proyecto en:
+
+src/ (o app/ + components/ + context/ + data/ + types/ + services/)
+components/
+screens/ (o app/ routes)
+navigation/
+services/
+data/
+types/
+hooks/
+utils/
+
+Separar claramente:
+
+* componentes reutilizables.
+* datos mock.
+* modelos/types.
+* lógica de negocio.
+* navegación.
+* servicios/API.
+
+## Requisito importante
+
+La aplicación debe ser funcional, no únicamente visual.
+
+Las acciones deben modificar realmente el estado de la aplicación.
+
+Ejemplo:
+
+Si el prestador pulsa "Aceptar", el cliente debe poder visualizar el estado ACCEPTED.
+
+Si pulsa "En camino", debe aparecer ON_THE_WAY y mostrarse el mapa con el prestador desplazándose.
+
+Si pulsa "Iniciar servicio", debe cambiar a IN_PROGRESS.
+
+Si pulsa "Finalizar", debe cambiar a COMPLETED.
+
+## Prioridad
+
+Construir primero un MVP completamente funcional.
+
+Prioridad:
+
+1. Login.
+2. Roles.
+3. Home.
+4. Servicios.
+5. Solicitud.
+6. Estados.
+7. Mapa.
+8. Seguimiento.
+9. Datos mock.
+10. Mejoras visuales.
+
+No agregar funcionalidades secundarias hasta que este flujo completo funcione correctamente.
