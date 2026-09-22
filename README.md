@@ -11,35 +11,67 @@
 ### 1. 🔐 Pantalla de Inicio & Autenticación (Login)
 Pantalla de entrada por defecto con temática en **color naranja**, selectores de tipo de cuenta (`Particular / Cliente` vs `Empresa / Prestador`), número de teléfono con selector `+57`, contraseña con ojo de visibilidad y validación estricta de términos de servicio.
 
-![Autenticación y Login](file:///C:/Users/gomez/.gemini/antigravity/brain/e235a887-f18f-4622-b8c6-06541a6c5b8f/login_screen_mockup_1789604237492.jpg)
+<!--
+  CAPTURA 1 — TOMAR EN: sitio web UrbaCargo (npx expo start y luego tecla "w").
+  Al abrir la app aparece directamente el LOGIN naranja (redirige por defecto).
+  Captura la pantalla completa: selectores Particular/Cliente vs Empresa/Prestador,
+  campo de teléfono +57, contraseña con el ojo de visibilidad y términos de servicio.
+-->
+![Autenticación y Login](assets/captura-login.png)
 
 ---
 
 ### 2. 🏠 Explorar & Catálogo de Servicios (Vista Cliente)
 Panel principal para el usuario **Daniel Cuello** con barra de búsqueda instantánea en vivo, carrusel de categorías con miniaturas, filtro por rangos de precio (Económicos ≤ $60k, Estándar $60k-$120k, Premium > $120k) y 15 servicios disponibles en Riohacha.
 
-![Explorar y Servicios](file:///C:/Users/gomez/.gemini/antigravity/brain/e235a887-f18f-4622-b8c6-06541a6c5b8f/home_screen_mockup_1789604253661.jpg)
+<!--
+  CAPTURA 2 — TOMAR EN: la misma app web ya iniciada.
+  Inicia sesión como CLIENTE: correo (cualquiera) y teléfono 3122064526 o el botón
+  de cliente. Caerás en la pestaña "Explorar" (primera, icono de casa).
+  Captura el catálogo: barra de búsqueda, carrusel de categorías y servicios con precio.
+-->
+![Explorar y Servicios](assets/captura-explorar.png)
 
 ---
 
 ### 3. 📄 Detalle del Servicio & Solicitud
 Vista detallada con descripción completa del servicio, rating de 4.9 estrellas, datos de contacto del prestador **Carlos Mendoza**, tiempo estimado de atención, mapa preview de ubicación en Riohacha y botón **"Solicitar Servicio"**.
 
-![Detalle del Servicio](file:///C:/Users/gomez/.gemini/antigravity/brain/e235a887-f18f-4622-b8c6-06541a6c5b8f/service_detail_mockup_1789604271437.jpg)
+<!--
+  CAPTURA 3 — TOMAR EN: la misma pestaña "Explorar".
+  Haz clic en el primer servicio ("Mantenimiento y Reparación de Laptops & PC",
+  prestador Carlos Mendoza) para abrir su detalle (ruta /service/...).
+  Captura la vista completa: descripción, rating 4.9, contacto del prestador,
+  tiempo estimado, mapa preview de Riohacha y botón "Solicitar Servicio".
+-->
+![Detalle del Servicio](assets/captura-detalle-servicio.png)
 
 ---
 
 ### 4. 🗺️ Mapa de Rastreo en Tiempo Real (Riohacha)
 Línea de tiempo del ciclo de vida (`PENDING` ➔ `ACCEPTED` ➔ `ON_THE_WAY` ➔ `IN_PROGRESS` ➔ `COMPLETED`). Incluye el mapa dinámico de Riohacha con marcadores interactivos del cliente y prestador, polyline de ruta, efecto de pulso animado en movimiento y tacómetro con distancia en kilómetros y ETA.
 
-![Mapa de Rastreo](file:///C:/Users/gomez/.gemini/antigravity/brain/e235a887-f18f-4622-b8c6-06541a6c5b8f/tracking_map_mockup_1789604289700.jpg)
+<!--
+  CAPTURA 4 — TOMAR EN: la pestaña "Mapa" (tercera, icono de mapa 🗺️).
+  Ya existe una solicitud en estado EN CAMINO (Carlos Mendoza → Calle 15), así que
+  verás la línea de tiempo PENDING➔ACCEPTED➔ON_THE_WAY➔IN_PROGRESS➔COMPLETED,
+  el mapa dinámico de Riohacha con marcadores y ruta, el pulso en movimiento
+  y el tacómetro con distancia/ETA. Captura cuando el marcador se vea centrado.
+-->
+![Mapa de Rastreo](assets/captura-mapa.png)
 
 ---
 
 ### 5. 👤 Perfil del Usuario
 Vista oficial del perfil de **Daniel Cuello** con teléfono **3122064526**, fotografía HD de hombre trigueño, rol de cuenta, ubicación base en Riohacha y accesos funcionales a Notificaciones y Seguridad.
 
-![Perfil del Usuario](file:///C:/Users/gomez/.gemini/antigravity/brain/e235a887-f18f-4622-b8c6-06541a6c5b8f/profile_screen_mockup_1789604310931.jpg)
+<!--
+  CAPTURA 5 — TOMAR EN: la pestaña "Perfil" (cuarta, icono de persona 👤).
+  Captura el perfil de Daniel Cuello completo: tarjeta con foto, teléfono
+  3122064526, rol CLIENTE, información de la cuenta, opciones de Ubicación,
+  Notificaciones y Seguridad.
+-->
+![Perfil del Usuario](assets/captura-perfil.png)
 
 ---
 
