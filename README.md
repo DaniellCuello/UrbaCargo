@@ -43,6 +43,38 @@ Vista oficial del perfil de **Daniel Cuello** con teléfono **3122064526**, foto
 
 ---
 
+### 6. 🧠 Ciclo de Vida de los Hooks & Rules of Hooks (Nueva Pestaña Web)
+Pestaña **Hooks** dentro de la navegación principal. Adapta a la web el tema de **Anatomía y Reglas de los Hooks**: explica las **3 fases del ciclo de vida** (Montaje, Actualización y Desmontaje), la anatomía de `useState` / `useEffect` y las **2 reglas oficiales**. Incluye un **demo interactivo en vivo** (`<LifecycleBoard />`) que monta, actualiza y desmonta un componente registrando cada fase en un log con horas y colores al pulsar "Montar Demo", "Desmontar Demo", "+1 Estado", "Auto +1" o "Cambiar props".
+
+**Última actualización:** 21 de septiembre de 2026.
+
+**📸 Capturas a tomar (3):**
+
+<!--
+  CAPTURA 1 — TOMAR EN: sitio web UrbaCargo (npx expo start y luego tecla "w").
+  Abre la pestaña "Hooks" (barra inferior, icono circular de sincronización ⭮).
+  Captura la PARTE SUPERIOR de la pantalla: encabezado "Hooks & Ciclo de Vida" +
+  las 3 tarjetas de las Fases del Ciclo de Vida (Montaje, Actualización, Desmontaje).
+-->
+![Hooks - Fases del Ciclo de Vida](assets/captura-hooks-1-fases.png)
+
+<!--
+  CAPTURA 2 — TOMAR EN: misma pestaña "Hooks", desplazándote hacia abajo.
+  Captura la sección "Anatomía de un Hook" (el bloque de código oscuro) junto con
+  las tarjetas de las "Reglas de los Hooks" y la nota de eslint-plugin-react-hooks.
+-->
+![Hooks - Anatomía y Reglas](assets/captura-hooks-2-anatomia-reglas.png)
+
+<!--
+  CAPTURA 3 — TOMAR EN: misma pestaña "Hooks", sección "Demo Interactivo".
+  Antes de capturar, pulsa "Auto +1" o "Cambiar props" varias veces y luego
+  "Desmontar Demo" para llenar el registro con los 3 colores (verde=MONTAR,
+  azul=ACTUALIZAR, rojo=DESMONTAR). Captura el panel completo con el log en vivo.
+-->
+![Hooks - Demo Interactivo con Log](assets/captura-hooks-3-demo.png)
+
+---
+
 ## 🛠️ Stack Tecnológico
 
 | Tecnología | Versión / Descripción |
@@ -91,10 +123,12 @@ UrbaCargo/
 │       ├── index.tsx           Vista 1: Explorar servicios / Dashboard prestador
 │       ├── shipments.tsx       Listado e historial de solicitudes
 │       ├── track.tsx           Vista 3: Mapa de seguimiento en Riohacha
-│       └── profile.tsx         Perfil oficial de Daniel Cuello
+│       ├── profile.tsx         Perfil oficial de Daniel Cuello
+│       └── hooks.tsx           Vista 6: Hooks y Ciclo de Vida (demo interactivo)
 ├── components/                 Componentes reutilizables
 │   ├── interactive-map.tsx     Mapa SVG de Riohacha con animación en vivo
 │   ├── notifications-modal.tsx Centro de notificaciones flotante
+│   ├── lifecycle-demo.tsx      Componente demo del ciclo de vida (LifecycleBoard)
 │   ├── screen.tsx              Contenedor de pantallas con Safe Area
 │   └── ui/                     Badges, Botones, Tarjetas e Iconos
 ├── context/                    State Store reactivo en tiempo real

@@ -65,6 +65,8 @@ const MAPPING = {
   'checkmark.seal.fill': 'verified',
   'shield.fill': 'shield',
   'rectangle.portrait.and.arrow.right': 'logout',
+  'arrow.triangle.2.circlepath': 'sync',
+  'trash.fill': 'delete',
 } as IconMapping;
 
 export function IconSymbol({

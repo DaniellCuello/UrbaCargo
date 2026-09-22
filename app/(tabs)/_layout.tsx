@@ -66,6 +66,15 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={24} name="person.fill" color={color} />,
         }}
       />
+      <Tabs.Screen
+        name="hooks"
+        options={{
+          title: 'Hooks',
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={24} name="arrow.triangle.2.circlepath" color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
